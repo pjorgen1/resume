@@ -1,0 +1,86 @@
+name: Release on GitHub Pages
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup | Checkout
+        uses: actions/checkout@v3
+
+      - name: Build | Resume
+        uses: xu-cheng/latex-action@v2
+        with:
+          latexmk_shell_escape: true
+          latexmk_use_xelatex: true
+          root_file: ./resume.tex
+
+      - name: Build | ResumeDark
+        uses: xu-cheng/latex-action@v2
+        with:
+          latexmk_shell_escape: true
+          latexmk_use_xelatex: true
+          root_file: ./resume-dark.tex
+
+      - name: Stage | PDFs
+        run: |
+          mkdir pub
+          mv resume.pdf pub
+          mv resume-dark.pdf pub
+
+      - name: Stage | Index
+        uses: cuchi/jinja2-action@v1.2.1
+        with:
+          template: ./templates/index.html.j2
+          output_file: pub/index.html
+          variables: PDF=resume.pdf
+
+      - name: Stage | Embed
+        uses: cuchi/jinja2-action@v1.2.1
+        with:
+          template: ./templates/embed.html.j2
+          output_file: pub/embed.html
+          variables: PDF=resume.pdf
+
+      - name: Stage | Resume
+        uses: cuchi/jinja2-action@v1.2.1
+        with:
+          template: ./templates/index.html.j2
+          output_file: pub/resume.html
+          variables: PDF=resume.pdf
+
+      - name: Stage | Resume, Embed
+        uses: cuchi/jinja2-action@v1.2.1
+        with:
+          template: ./templates/embed.html.j2
+          output_file: pub/resume-embed.html
+          variables: PDF=resume.pdf
+
+      - name: Stage | Embed
+        uses: cuchi/jinja2-action@v1.2.1
+        with:
+          template: ./templates/embed.html.j2
+          output_file: pub/embed.html
+          variables: PDF=resume-dark.pdf
+
+      - name: Stage | Resume
+        uses: cuchi/jinja2-action@v1.2.1
+        with:
+          template: ./templates/index.html.j2
+          output_file: pub/resume.html
+          variables: PDF=resume-dark.pdf
+
+      - name: Stage | Resume, Embed
+        uses: cuchi/jinja2-action@v1.2.1
+        with:
+          template: ./templates/embed.html.j2
+          output_file: pub/resume-embed.html
+          variables: PDF=resume-dark.pdf
+
+      - name: Deploy, Github Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: pub
