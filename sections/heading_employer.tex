@@ -5,30 +5,33 @@
 % Write name
 \vc{\Huge\ceraproblack{Pierce H. Jorgensen }\small\cerapro{He/Him}}
 \hfill
-% Include heading icon
-\vc{\small\tradegothic\textcolor{logocolor}{@}}
-\vc{\includegraphics[height=15pt, keepaspectratio]{logo}}
+% Employer logo
+\ifthenelse{\value{light}=1}
+  {
+  \vc{\includegraphics[height=15pt, keepaspectratio]{logo}}}
+  {
+  \vc{\includegraphics[height=15pt, keepaspectratio]{logo-dark}}}
+\vc{\textcolor{logocolor}{@}}
 \vc{\includegraphics[width=55pt, height=55pt, keepaspectratio]{employer}}
-\medskip
 
-|% Social icons
+% Social icons
 \href{https://snowy-hill.duckdns.org}{
-  \faIcon{home}
+  \textcolor{linkcolor}{\faIcon{home}}
 } $|$
 \href{mailto:jorgensenpierce@gmail.com}{
-  \faIcon{envelope}
+  \textcolor{linkcolor}{\faIcon{envelope}}
   \thinspace \thinspace
-  \myuline{\textcolor{linkcolor}{jorgensenpierce@gmail.com}}
+  {\textcolor{linkcolor}{jorgensenpierce@gmail.com}}
 } $|$
 \href{https://linkedin.com/in/phjorgen}{
-  \faIcon{linkedin}
+  \textcolor{linkcolor}{\faIcon{linkedin}}
   \thinspace \thinspace
-  \myuline{\textcolor{linkcolor}{phjorgen}}
+  {\textcolor{linkcolor}{phjorgen}}
 } $|$
 \href{https://github.com/phjorgen}{
-  \faIcon{github}
+  \textcolor{linkcolor}{\faIcon{github}}
   \thinspace \thinspace
-  \myuline{\textcolor{linkcolor}{phjorgen}}
+  {\textcolor{linkcolor}{phjorgen}}
 } $|$
 \faPhone
 \thinspace \thinspace

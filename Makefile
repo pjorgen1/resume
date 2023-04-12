@@ -14,15 +14,15 @@ resume:
 
 dark-theme:
 	rm -rf ./aux
-	rm -f ./resume_dark.pdf
+	rm -f ./resume-dark.pdf
 	rm -f embed-resume-dark.html
 	rm -f resume-dark.html
 	mkdir -p ./aux
 	latexmk -xelatex -shell-escape -output-directory ./aux ./resume-dark.tex \
 		|| xelatex --shell-escape -output-directory ./aux ./resume-dark.tex
-	mv ./aux/resume_dark.pdf ./resume_dark.pdf
-	PDF='resume_dark.pdf' jinja2 templates/index.html.j2 > resume-dark.html
-	PDF='resume_dark.pdf' jinja2 templates/embed.html.j2 > embed-resume-dark.html
+	mv ./aux/resume-dark.pdf ./resume-dark.pdf
+	PDF='resume-dark.pdf' jinja2 templates/index.html.j2 > resume-dark.html
+	PDF='resume-dark.pdf' jinja2 templates/embed.html.j2 > embed-resume-dark.html
 
 open:
 	@if [ -f "resume.pdf" ]; then\
