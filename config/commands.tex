@@ -1,0 +1,68 @@
+% ----------------------
+% Common custom commands
+% ----------------------
+
+% Add vertical centering command
+\def\vc#1{$\vcenter{\hbox{#1}}$}
+
+% Add underline command
+\newcommand{\myuline}[1]{%
+  \uline{#1}%
+}
+
+% Add heading commands
+\newcommand{\mySubHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\mySubHeadingLess}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2
+    \end{tabular*}\vspace{-7pt}\\
+}
+\newcommand{\mySubSubHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\myProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+% Add itemized commands
+\newcommand{\myItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\mySubItem}[1]{\myItem{#1}\vspace{-4pt}}
+\newcommand{\mySubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\mySubHeadingListEnd}{\end{itemize}}
+\newcommand{\myItemListStart}{\begin{itemize}}
+\newcommand{\myItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% Add lettering commands
+\newcommand{\letterparagraph}[1]{
+  \justifying{
+    \begin{adjustwidth}{0.15in}{0in}
+      #1
+      \medskip
+    \end{adjustwidth}
+  }
+  \raggedright
+}
+\newcommand{\opening}[1]{
+    \textit{Dear #1,\\}
+    \vspace{0.3cm}
+}
+\newcommand{\closing}{
+    \vspace{0.3cm}
+    \textit{Sincerely,\\}
+    {Spencer C. Imbleau\\}
+    \vspace{0.1cm}
+    \includegraphics[height=2in, width=2in, keepaspectratio]{signature}
+}
