@@ -1,4 +1,4 @@
-all: clean light dark html
+all: cleanAll light dark html clean
 
 # Light theme
 light:
@@ -74,5 +74,8 @@ html:
 	@echo "$$DARK"  > ./out/dark.html
 
 clean:
+	@rm -rf ./aux
+
+cleanAll:
 	@rm -rf ./aux
 	@rm -rf ./out
