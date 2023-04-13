@@ -32,8 +32,11 @@ define INDEX
     <title>Resume - Pierce Jorgensen</title>
   </head>
   <body>
-    <a href="light.html">Light theme</a>
-    <a href="dark.html">Dark theme</a>
+	<h1>Resume - Pierce Jorgensen</h1>
+    <h3>
+	  <a href="light.html">Light theme</a><br>
+      <a href="dark.html">Dark theme</a>
+	</h3>
   </body>
 </html>
 endef
