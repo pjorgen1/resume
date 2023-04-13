@@ -31,11 +31,11 @@ define INDEX
   <head>
     <title>Resume - Pierce Jorgensen</title>
   </head>
-  <body style="background-color:black;">
+  <body style="background-color:rgb(74, 74, 74);">
 	  <center>
-	  <object data="./resume-jorgensen-pierce-dark.pdf" type="application/pdf" width="80%" height="1450px">
+	  <object data="./resume-jorgensen-pierce-dark.pdf" type="application/pdf" width="50%" height="1460px">
       </object>
-	  <object data="./resume-jorgensen-pierce.pdf" type="application/pdf" width="80%" height="1450px">
+	  <object data="./resume-jorgensen-pierce.pdf" type="application/pdf" width="50%" height="1460px">
       </object>
 	  </center>
   </body>
