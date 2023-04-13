@@ -1,6 +1,6 @@
-all: clean resume dark-theme
+all: clean light dark
 
-resume:
+light:
 	rm -rf ./aux
 	rm -f ./resume.pdf
 	rm -f embed-resume.html
@@ -12,7 +12,7 @@ resume:
 	PDF='resume.pdf' jinja2 templates/index.html.j2 > resume.html
 	PDF='resume.pdf' jinja2 templates/embed.html.j2 > embed-resume.html
 
-dark-theme:
+dark:
 	rm -rf ./aux
 	rm -f ./resume-dark.pdf
 	rm -f embed-resume-dark.html
@@ -23,11 +23,6 @@ dark-theme:
 	mv ./aux/resume-dark.pdf ./resume-dark.pdf
 	PDF='resume-dark.pdf' jinja2 templates/index.html.j2 > resume-dark.html
 	PDF='resume-dark.pdf' jinja2 templates/embed.html.j2 > embed-resume-dark.html
-
-open:
-	@if [ -f "resume.pdf" ]; then\
-		xdg-open resume.pdf || open resume.pdf || explorer.exe resume.pdf;\
-	fi
 
 clean:
 	@rm -rf ./aux
