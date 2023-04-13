@@ -1,4 +1,4 @@
-all: cleanAll light dark html clean
+all: cleanall light dark html clean
 
 # Light theme
 light:
@@ -32,50 +32,23 @@ define INDEX
     <title>Resume - Pierce Jorgensen</title>
   </head>
   <body>
-	<h1>Resume - Pierce Jorgensen</h1>
-    <h3>
-	  <a href="light.html">Light theme</a><br>
-      <a href="dark.html">Dark theme</a>
-	</h3>
+	  <object data="./resume-jorgensen-pierce.pdf" type="application/pdf" width="50%" height="1300px">
+      </object>
+	  <object data="./resume-jorgensen-pierce-dark.pdf" type="application/pdf" width="50%" height="1300px">
+      </object>
   </body>
 </html>
 endef
 export INDEX
 
-# light.html
-define LIGHT
-<!DOCTYPE html>
-<html>
-  <body>
-    <object data="./resume-jorgensen-pierce.pdf" type="application/pdf" width="100%" height="1000px">
-    </object>
-  </body>
-</html>
-endef
-export LIGHT
-
-# dark.html
-define DARK
-<!DOCTYPE html>
-<html>
-  <body>
-    <object data="./resume-jorgensen-pierce-dark.pdf" type="application/pdf" width="100%" height="1000px">
-    </object>
-  </body>
-</html>
-endef
-export DARK
-
 # Generate html files
 html:
 	mkdir -p ./out
 	@echo "$$INDEX" > ./out/index.html
-	@echo "$$LIGHT" > ./out/light.html
-	@echo "$$DARK"  > ./out/dark.html
 
 clean:
 	@rm -rf ./aux
 
-cleanAll:
+cleanall:
 	@rm -rf ./aux
 	@rm -rf ./out
