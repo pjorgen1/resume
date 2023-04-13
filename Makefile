@@ -32,10 +32,12 @@ define INDEX
     <title>Resume - Pierce Jorgensen</title>
   </head>
   <body style="background-color:black;">
-	  <object data="./resume-jorgensen-pierce-dark.pdf" type="application/pdf" width="100%" height="1400px">
+	  <center>
+	  <object data="./resume-jorgensen-pierce-dark.pdf" type="application/pdf" width="80%" height="1450px">
       </object>
-	  <object data="./resume-jorgensen-pierce.pdf" type="application/pdf" width="100%" height="1400px">
+	  <object data="./resume-jorgensen-pierce.pdf" type="application/pdf" width="80%" height="1450px">
       </object>
+	  </center>
   </body>
 </html>
 endef
