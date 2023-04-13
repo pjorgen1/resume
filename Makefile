@@ -31,7 +31,7 @@ define INDEX
   <head>
     <title>Resume - Pierce Jorgensen</title>
   </head>
-  <body style="background-color:rgb(74, 74, 74);">
+  <body style="background-color:rgb(30, 30, 30);">
 	  <center>
 	  <object data="./resume-jorgensen-pierce-dark.pdf" type="application/pdf" width="50%" height="1460px">
       </object>
