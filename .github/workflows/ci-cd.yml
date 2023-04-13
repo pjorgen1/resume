@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Build resume & deploy static content
+name: Build resume and deploy static content
 
 # Runs on pushes targeting the default branch
 on:
@@ -26,25 +26,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup | Checkout
+      - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Build | light
-        uses: xu-cheng/latex-action@v2
-        with:
-          latexmk_shell_escape: true
-          latexmk_use_xelatex: true
-          root_file: ./resume.tex
-
-      - name: Build | dark
-        uses: xu-cheng/latex-action@v2
-        with:
-          latexmk_shell_escape: true
-          latexmk_use_xelatex: true
-          root_file: ./resume-dark.tex
-
-      - name: Build | html
-        uses: xu-cheng/latex-action@v2
+      - name: Build
+        run: make
 
   deploy:
     needs: build
