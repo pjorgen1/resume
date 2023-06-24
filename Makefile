@@ -10,7 +10,7 @@ light:
 	mkdir -p ./out
 	latexmk -xelatex -shell-escape -output-directory ./aux ./resume.tex \
 		|| xelatex --shell-escape -output-directory ./aux ./resume.tex
-	mv ./aux/resume.pdf ./out/resume-jorgensen-pierce.pdf
+	mv ./aux/resume.pdf ./out/resume-john-doe.pdf
 
 # Dark theme
 dark:
@@ -22,7 +22,7 @@ dark:
 	mkdir -p ./out
 	latexmk -xelatex -shell-escape -output-directory ./aux ./resume-dark.tex \
 		|| xelatex --shell-escape -output-directory ./aux ./resume-dark.tex
-	mv ./aux/resume-dark.pdf ./out/resume-jorgensen-pierce-dark.pdf
+	mv ./aux/resume-dark.pdf ./out/resume-john-doe-dark.pdf
 
 # index.html
 define INDEX
@@ -33,9 +33,9 @@ define INDEX
   </head>
   <body style="background-color:rgb(40, 40, 40);">
 	  <center>
-	  <object data="./resume-jorgensen-pierce-dark.pdf" type="application/pdf" width="70%" height="1500px">
+	  <object data="./resume-john-doe-dark.pdf" type="application/pdf" width="70%" height="1500px">
       </object>
-	  <object data="./resume-jorgensen-pierce.pdf" type="application/pdf" width="70%" height="1500px">
+	  <object data="./resume-john-doe.pdf" type="application/pdf" width="70%" height="1500px">
       </object>
 	  </center>
   </body>
