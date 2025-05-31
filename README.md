@@ -2,17 +2,17 @@
 A repository containing the LaTeX source of Pierce Jorgensen's resume. Tested and deployed with GitHub Actions.
 
 ---
-[![resume last release](https://img.shields.io/github/release-date/phjorgen/resume?logo=github&label=Last%20Release)](https://github.com/phjorgen/resume/releases)
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/phjorgen/resume/ci.yml?logo=github&label=CI)](https://github.com/phjorgen/resume/actions/workflows/ci.yml)
+[![resume last release](https://img.shields.io/github/release-date/pjorgen1/resume?logo=github&label=Last%20Release)](https://github.com/phjorgen/resume/releases)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/pjorgen1/resume/ci.yml?logo=github&label=CI)](https://github.com/phjorgen/resume/actions/workflows/ci.yml)
 
 # 🤖 Deployment
-Deployment is automated by [GitHub Actions](https://github.com/phjorgen/resume/actions).
-- Pushes to `main` trigger a new release of the [latest resume ](https://github.com/phjorgen/resume/releases/tag/latest), available in several formats.
+Deployment is automated by [GitHub Actions](https://github.com/pjorgen1/resume/actions).
+- Pushes to `main` trigger a new release of the [latest resume ](https://github.com/pjorgen1/resume/releases/tag/latest), available in several formats.
   | Artifact               | Link                                                                          | Mirror                                         |
   | ---------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------- |
-  | resume                 | <https://phjorgen.github.io/resume/resume.html>                               | <https://phjorgen.github.io/resume/>           |
-  | resume, Embedded       | <https://phjorgen.github.io/resume/resume-embed.html>                         | <https://phjorgen.github.io/resume/embed.html> |
-  | resume, Download       | <https://github.com/phjorgen/resume/releases/download/latest/resume.pdf>      |                                                |
+  | resume                 | <https://pjorgen1.github.io/resume/resume.html>                               | <https://pjorgen1.github.io/resume/>           |
+  | resume, Embedded       | <https://pjorgen1.github.io/resume/resume-embed.html>                         | <https://pjorgen1.github.io/resume/embed.html> |
+  | resume, Download       | <https://github.com/pjorgen1/resume/releases/download/latest/resume.pdf>      |                                                |
 - Manually pushed [releases](https://github.com/phjorgen/resume/releases) also trigger workflows to upload artifacts.
 
 # 🔧 Building
